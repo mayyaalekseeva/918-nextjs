@@ -1,7 +1,9 @@
+'use client'
+
 export default function Menu() {
   return (
     <main>
-      <h1>Contacts</h1>
+      <h1>Main</h1>
     </main>
-  );
+  )
 }

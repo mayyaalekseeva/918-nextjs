@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<any>,
 ) {
   const data = await prisma.user.findMany();
 

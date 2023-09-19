@@ -4,8 +4,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
+    <section className="bg-gradient-to-r from-indigo-500">
       <nav>Admin Dashboard</nav>
 
       {children}

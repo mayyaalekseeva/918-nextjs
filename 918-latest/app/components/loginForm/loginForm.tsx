@@ -1,29 +1,31 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
+'use client'
+
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 
 interface Errors {
-  email?: string;
+  email?: string
 }
 
 export default function LoginForm() {
   return (
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ email: '', password: '' }}
       validate={(values) => {
-        const errors: Errors = {};
+        const errors: Errors = {}
         if (!values.email) {
-          errors.email = "Required";
+          errors.email = 'Required'
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = "Invalid email address";
+          errors.email = 'Invalid email address'
         }
-        return errors;
+        return errors
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 400)
       }}
     >
       {({ isSubmitting }) => (
@@ -50,5 +52,5 @@ export default function LoginForm() {
         </Form>
       )}
     </Formik>
-  );
+  )
 }

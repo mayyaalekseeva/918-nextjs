@@ -1,5 +1,6 @@
 'use client'
 
+import { config } from 'config'
 import Link from 'next/link'
 
 export default function ContactsInfo() {
@@ -27,9 +28,7 @@ export default function ContactsInfo() {
       </div>
 
       <button className="border-2 rounded-md border-zinc-200 hover:bg-zinc-200 p-2 w-48 h-16 text-xl">
-        <a href="https://yandex.ru/maps/47/nizhny-novgorod/?from=mapframe&ll=43.992852%2C56.322804&mode=routes&rtext=56.315411%2C43.993213~56.330085%2C43.997669&rtt=auto&ruri=~&z=15.24">
-          Как добраться
-        </a>
+        <a href={config.social.findUs}>Как добраться</a>
       </button>
     </div>
   )

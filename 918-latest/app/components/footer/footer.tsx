@@ -1,4 +1,5 @@
 'use client'
+import { config } from 'config'
 import Image from 'next/image'
 
 export default function Footer() {
@@ -18,11 +19,16 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-3">
-          <a href="https://vk.com/bistro918" target="_blank">
-            <Image src="/vk.svg" alt="vk" width="50" height="50" />
+          <a href={config.social.vk} target="_blank">
+            <Image src="/svg/vk.svg" alt="vk" width="50" height="50" />
           </a>
-          <a href="https://instagram.com/9.18bistro" target="_blank">
-            <Image src="/instagram.svg" alt="insta" width="50" height="50" />
+          <a href={config.social.insta} target="_blank">
+            <Image
+              src="/svg/instagram.svg"
+              alt="insta"
+              width="50"
+              height="50"
+            />
           </a>
         </div>
       </div>

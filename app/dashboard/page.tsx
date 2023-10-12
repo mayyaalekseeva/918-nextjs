@@ -1,5 +1,19 @@
-'use client'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
-export default function Dashboard() {
-  return <main className="flex items-center justify-center"></main>
+export default function Page() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  )
 }

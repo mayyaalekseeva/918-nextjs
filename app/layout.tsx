@@ -1,6 +1,7 @@
-import { Footer, Nav } from 'app/components'
-import './globals.css'
 import type { Metadata } from 'next'
+import NextAuthSessionProvider from './providers/sessionProvider'
+
+import './globals.css'
 
 export const metadata: Metadata = {
   title: '9/18 бистро',
@@ -15,13 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <Nav />
-
-        <div className="container py-8 px-6 mx-auto min-h-screen flex items-center justify-center">
-          {children}
-        </div>
-
-        <Footer />
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
 
         {/* Yandex.Metrics */}
         <script

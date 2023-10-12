@@ -1,7 +1,12 @@
 'use client'
 
-import { ContactsInfo, YaMap } from 'app/components'
+import { AddItem } from 'app/components/dashboard'
 
-export default function EditItem() {
-  return <main className="flex items-center justify-center"></main>
+export default function EditItemPage() {
+  return (
+    <section className="flex items-center justify-center">
+      Редактировать блюдо
+      <AddItem />
+    </section>
+  )
 }

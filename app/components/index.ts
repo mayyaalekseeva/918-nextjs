@@ -1,6 +1,2 @@
-export { default as LoginForm } from './loginForm'
-export { default as Nav } from './navigation'
-export { default as Footer } from './footer'
-export { default as YaMap } from './yaMap'
-export { default as ContactsInfo } from './contactsInfo'
-export { default as About } from './about'
+export * from './main'
+export * from './dashboard'

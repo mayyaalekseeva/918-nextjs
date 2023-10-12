@@ -1,7 +1,7 @@
 'use client'
 
-import { ContactsInfo, YaMap } from 'app/components'
+import { AddItem } from 'app/components/dashboard'
 
-export default function AddItem() {
-  return <main className="flex items-center justify-center"></main>
+export default function AddItemPage() {
+  return <AddItem />
 }

@@ -16,15 +16,25 @@ export const config = {
   pages: {
     main: {
       title: 'Главная',
-      url: '/',
+      url: '/main/about',
     },
     menu: {
       title: 'Меню',
-      url: '/menu',
+      url: '/main/menu',
     },
     contacts: {
       title: 'Контакты',
-      url: '/contacts',
+      url: '/main/contacts',
+    },
+  },
+  dashboardPages: {
+    addItem: {
+      title: 'Добавить блюдо',
+      url: '/dashboard/addItem',
+    },
+    editItem: {
+      title: 'Редактировать блюдо',
+      url: '/dashboard/editItem',
     },
   },
 } as const

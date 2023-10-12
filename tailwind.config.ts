@@ -16,6 +16,9 @@ const config: Config = {
         800: '#1e4d2b',
       },
       zinc: colors.zinc,
+      indigo: colors.indigo,
+      white: colors.white,
+      cyan: colors.cyan,
     },
     extend: {
       backgroundImage: {

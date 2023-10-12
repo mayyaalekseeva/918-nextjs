@@ -1,12 +1,12 @@
 'use client'
 
-import Image from 'next/image'
-import { About } from 'app/components'
+import { redirect, usePathname } from 'next/navigation'
 
-export default function Home() {
-  return (
-    <main className="flex items-center justify-center">
-      <About />
-    </main>
-  )
+export default async function MainPage() {
+  const pathname = usePathname()
+  console.log({ pathname })
+
+  if (!pathname || pathname === '/') {
+    redirect('/main/about')
+  }
 }

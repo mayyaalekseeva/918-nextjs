@@ -8,7 +8,7 @@ export default function MainLayout({
   return (
     <>
       <Nav />
-      <div className="container py-8 px-6 mx-auto min-h-screen flex items-center justify-center">
+      <div className="container py-8 px-6 mx-auto min-h-screen flex items-center justify-between">
         {children}
       </div>
       <Footer />

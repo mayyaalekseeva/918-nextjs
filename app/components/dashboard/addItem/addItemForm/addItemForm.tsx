@@ -1,18 +1,10 @@
 'use client'
 
+import { Item } from '@prisma/client'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 
-interface Item {
-  category?: string
-  name?: string
-  ingredients?: string
-  price?: string
-  weight?: string
-  kcal?: string
-}
-
 export default function AddItemForm() {
-  const initialItem: Item = {
+  const initialItem: Partial<Item> = {
     category: '',
     name: '',
     ingredients: '',
@@ -33,12 +25,10 @@ export default function AddItemForm() {
         console.log({ values })
 
         try {
-          const response = await fetch('/api/item', {
+          await fetch('/api/item', {
             method: 'POST',
             body: JSON.stringify(values),
           })
-
-          console.log({ response })
         } catch (e) {
           console.log(e)
         }
@@ -54,10 +44,16 @@ export default function AddItemForm() {
           <ErrorMessage name="name" component="div" />
 
           <h4 className="px-4 py-2">Категория</h4>
+
           <Field
+            as="select"
             name="category"
             className="mb-3 h-16 p-4 w-full border-2 rounded-lg text-xl"
-          />
+          >
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+          </Field>
           <ErrorMessage name="category" component="div" />
 
           <h4 className="px-4 py-2">Ингредиенты</h4>
